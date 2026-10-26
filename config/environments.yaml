@@ -1,0 +1,35 @@
+# Ambientes onde o NOVO QA pode operar o navegador.
+#
+# type: local | dev | staging | prod   (prod = somente ações GREEN)
+# Valores podem ser literais ou { env: NOME_DA_VARIAVEL } (lido do .env).
+# Senhas SEMPRE como { env: ... } — literal é rejeitado na validação.
+#
+# Ambientes reais são adicionados quando o /qa pedir os dados (URL, papéis,
+# usuários, MFA/captcha, se pode criar dados).
+environments:
+  guruja-dev:
+    project: guruja
+    type: dev
+    baseUrl: https://portal-guruja-dev.azurewebsites.net
+    # Liberado pelo usuário em 26/10 para o GURUJA-8968 (preferências do aluno; originais restauradas no fim do run).
+    allowDataCreation: true
+    mfa: false
+    captcha: false
+    roles:
+      admin:
+        username: frambachadmin
+        password: { env: GURUJA_DEV_ADMIN_PASSWORD }
+      aluno:
+        username: AbnerNasser
+        password: { env: GURUJA_DEV_ALUNO_PASSWORD }
+  fixture-local:
+    project: fixture
+    type: local
+    baseUrl: http://localhost:4400
+    allowDataCreation: true
+    mfa: false
+    captcha: false
+    roles:
+      admin:
+        username: admin
+        password: { env: FIXTURE_ADMIN_PASSWORD }

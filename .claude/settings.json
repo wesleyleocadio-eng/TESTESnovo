@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "ask": ["mcp__novo-qa__plan_approve", "mcp__novo-qa__act_approved"]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [{ "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/guard-shell.mjs\"" }]
+      }
+    ]
+  }
+}

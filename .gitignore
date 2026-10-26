@@ -1,0 +1,19 @@
+node_modules/
+dist/
+
+# segredos
+.env
+.env.*
+!.env.example
+
+# estado local, evidências e cache (podem conter dados sensíveis)
+data/
+runs/
+reports/
+.cache/
+.auth/
+
+# saída do Playwright
+test-results/
+playwright-report/
+blob-report/

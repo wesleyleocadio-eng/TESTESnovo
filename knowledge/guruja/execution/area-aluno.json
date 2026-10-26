@@ -1,0 +1,337 @@
+[
+  {
+    "route": "/",
+    "action": "fill",
+    "target": {
+      "role": "textbox",
+      "name": "nickName"
+    },
+    "playwright": "await page.getByRole('textbox', { name: 'nickName' }).fill(<username>);",
+    "valueType": "username",
+    "scenario": "(setup)",
+    "validatedIn": [
+      "GURUJA-9002-20261026T151837",
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/",
+    "action": "fill",
+    "target": {
+      "role": "textbox",
+      "name": "password"
+    },
+    "playwright": "await page.getByRole('textbox', { name: 'password' }).fill(<password>);",
+    "valueType": "password",
+    "scenario": "(setup)",
+    "validatedIn": [
+      "GURUJA-9002-20261026T151837",
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Entrar"
+    },
+    "playwright": "await page.getByRole('button', { name: 'Entrar' }).click();",
+    "scenario": "(setup)",
+    "validatedIn": [
+      "GURUJA-9002-20261026T151837",
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/visao-geral",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Professor Rafael Araripe"
+    },
+    "playwright": "await page.getByRole('button', { name: 'Professor Rafael Araripe' }).click();",
+    "scenario": "CT-001",
+    "validatedIn": [
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/visao-geral",
+    "action": "navigate",
+    "target": {
+      "url": "/aluno/visao-geral"
+    },
+    "playwright": "await page.goto('/aluno/visao-geral');",
+    "scenario": "CT-001",
+    "validatedIn": [
+      "GURUJA-9002-20261026T151837",
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/visao-geral",
+    "action": "click",
+    "target": {
+      "role": "img",
+      "name": "Rafael Araripe"
+    },
+    "playwright": "await page.getByRole('img', { name: 'Rafael Araripe' }).click();",
+    "scenario": "CT-001",
+    "validatedIn": [
+      "GURUJA-9002-20261026T151837",
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/visao-geral",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Rafael Araripe Professor Rafael Araripe"
+    },
+    "playwright": "await page.getByRole('button', { name: 'Rafael Araripe Professor Rafael Araripe' }).click();",
+    "scenario": "(setup)",
+    "validatedIn": [
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/entrar",
+    "action": "fill",
+    "target": {
+      "role": "textbox",
+      "name": "nickName"
+    },
+    "playwright": "await page.getByRole('textbox', { name: 'nickName' }).fill(<username>);",
+    "valueType": "username",
+    "scenario": "CT-001",
+    "validatedIn": [
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/entrar",
+    "action": "fill",
+    "target": {
+      "role": "textbox",
+      "name": "password"
+    },
+    "playwright": "await page.getByRole('textbox', { name: 'password' }).fill(<password>);",
+    "valueType": "password",
+    "scenario": "CT-001",
+    "validatedIn": [
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/entrar",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Entrar"
+    },
+    "playwright": "await page.getByRole('button', { name: 'Entrar' }).click();",
+    "scenario": "CT-001",
+    "validatedIn": [
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/",
+    "action": "navigate",
+    "target": {
+      "url": "/"
+    },
+    "playwright": "await page.goto('/');",
+    "scenario": "CT-001",
+    "validatedIn": [
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/entrar",
+    "action": "navigate",
+    "target": {
+      "url": "/entrar"
+    },
+    "playwright": "await page.goto('/entrar');",
+    "scenario": "CT-001",
+    "validatedIn": [
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/visao-geral",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Rafael Araripe Professor Rafael Araripe",
+      "within": {
+        "role": "navigation",
+        "name": "Menu de navegação"
+      }
+    },
+    "playwright": "await page.getByRole('navigation', { name: 'Menu de navegação' }).getByRole('button', { name: 'Rafael Araripe Professor Rafael Araripe' }).click();",
+    "scenario": "CT-001",
+    "validatedIn": [
+      "GURUJA-9002-20261026T151837",
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/visao-geral",
+    "action": "press",
+    "target": {
+      "role": "tabpanel",
+      "name": "Sobre mim"
+    },
+    "playwright": "await page.getByRole('tabpanel', { name: 'Sobre mim' }).press('End');",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9002-20261026T151837",
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/visao-geral",
+    "action": "click",
+    "target": {
+      "role": "tab",
+      "name": "Perfil de trabalho"
+    },
+    "playwright": "await page.getByRole('tab', { name: 'Perfil de trabalho' }).click();",
+    "scenario": "CT-004",
+    "validatedIn": [
+      "GURUJA-9002-20261026T151837",
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/visao-geral",
+    "action": "click",
+    "target": {
+      "role": "tab",
+      "name": "Sobre mim"
+    },
+    "playwright": "await page.getByRole('tab', { name: 'Sobre mim' }).click();",
+    "scenario": "CT-004",
+    "validatedIn": [
+      "GURUJA-9002-20261026T151837",
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/visao-geral",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Rafael Araripe",
+      "within": {
+        "role": "navigation",
+        "name": "Menu de navegação"
+      }
+    },
+    "playwright": "await page.getByRole('navigation', { name: 'Menu de navegação' }).getByRole('button', { name: 'Rafael Araripe' }).click();",
+    "scenario": "CT-002",
+    "validatedIn": [
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/visao-geral",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Fechar",
+      "within": {
+        "role": "dialog",
+        "name": "Professor"
+      }
+    },
+    "playwright": "await page.getByRole('dialog', { name: 'Professor' }).getByRole('button', { name: 'Fechar' }).click();",
+    "scenario": "CT-007",
+    "validatedIn": [
+      "GURUJA-9002-20261026T151837",
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/visao-geral",
+    "action": "press",
+    "target": {
+      "role": "dialog",
+      "name": "Professor"
+    },
+    "playwright": "await page.getByRole('dialog', { name: 'Professor' }).press('Escape');",
+    "scenario": "CT-008",
+    "validatedIn": [
+      "GURUJA-9002-20261026T151837",
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/visao-geral",
+    "action": "press",
+    "target": {
+      "role": "tab",
+      "name": "Sobre mim"
+    },
+    "playwright": "await page.getByRole('tab', { name: 'Sobre mim' }).press('Escape');",
+    "scenario": "CT-008",
+    "validatedIn": [
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/visao-geral",
+    "action": "click",
+    "target": {
+      "role": "link",
+      "name": "Arquivo"
+    },
+    "playwright": "await page.getByRole('link', { name: 'Arquivo' }).click();",
+    "scenario": "EXP-002",
+    "validatedIn": [
+      "GURUJA-9002-20261026T143144"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/visao-geral",
+    "action": "hover",
+    "target": {
+      "text": "Minha missão é ajudá-lo",
+      "within": {
+        "role": "tabpanel",
+        "name": "Sobre mim"
+      }
+    },
+    "playwright": "await page.getByRole('tabpanel', { name: 'Sobre mim' }).getByText('Minha missão é ajudá-lo').hover();",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9002-20261026T151837"
+    ],
+    "lastSeen": "2026-10-26"
+  }
+]

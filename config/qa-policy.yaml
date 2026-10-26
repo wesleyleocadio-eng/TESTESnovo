@@ -1,0 +1,39 @@
+# Política de execução. A lógica que aplica isto chega no M3 (guard) e M5 (lotes).
+
+guard:
+  # Níveis permitidos por tipo de ambiente. RED, quando permitido, ainda exige aprovação humana.
+  allowedLevels:
+    local: [GREEN, YELLOW, RED]
+    dev: [GREEN, YELLOW, RED]
+    staging: [GREEN, YELLOW, RED]
+    prod: [GREEN]
+  # Palavras no nome do alvo que elevam o nível de um clique/submit.
+  # A comparação ignora caixa e acento. Na dúvida, o nível sobe.
+  yellowKeywords:
+    [salvar, criar, cadastrar, adicionar, novo, editar, alterar, atualizar, importar,
+     upload, anexar, publicar, duplicar, save, create, add, new, edit, update, import, submit]
+  redKeywords:
+    [excluir, deletar, apagar, remover, delete, remove, destroy,
+     pagar, pagamento, comprar, compra, checkout, contratar, assinar, pay, purchase, subscribe,
+     enviar email, enviar e-mail, disparar, notificar todos, send email,
+     revogar, conceder permissao, alterar permissao, tornar admin, revoke, grant,
+     resetar, redefinir, cancelar assinatura, encerrar conta, reset]
+
+redaction:
+  # Somadas às chaves padrão (password, token, secret, authorization, cookie, api key, cvv, card).
+  extraSensitiveKeys: []
+  # Seletores mascarados em todo screenshot.
+  maskSelectors: ['input[type=password]']
+
+execution:
+  # Cenários por lote de test-executor, conforme o risco (ARCHITECTURE.md D4).
+  batchSize: { HIGH: 4, MEDIUM: 6, LOW: 8 }
+
+automation:
+  maxFixAttempts: 3
+
+evidence:
+  # Vídeo da sessão do navegador (.webm em runs/<card>/<runId>/evidence/), com capítulos por cenário.
+  # Vídeo não é sanitizável como texto: campos de senha aparecem mascarados pela própria tela,
+  # mas qualquer outro dado exibido fica gravado — runs/ é gitignored.
+  video: always

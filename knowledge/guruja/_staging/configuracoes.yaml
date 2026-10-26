@@ -1,0 +1,73 @@
+module: configuracoes
+reviewed: false
+proposals:
+  - statement: "Preferências do aluno via /v3/UserPreference: GET, GET /Options e PUT parcial (só campos alterados); PUT devolve {updated:false} quando nada muda"
+    kind: business_rule
+    status: DOCUMENTED
+    confidence: HIGH
+    source:
+      type: jira
+      reference: GURUJA-8968
+  - statement: "Gestão de tempo controla o cronômetro do cabeçalho: Nunca mostrar = oculto; Mostrar durante o estudo = só com modal da atividade aberto; Sempre mostrar = visível; vale na hora, sem recarregar"
+    kind: business_rule
+    status: DOCUMENTED
+    confidence: HIGH
+    source:
+      type: jira
+      reference: GURUJA-8968
+  - statement: Seletor de Tema e switch Avisos operacionais não existem na Visão geral (Avisos operacionais é sempre ligado)
+    kind: business_rule
+    status: DOCUMENTED
+    confidence: HIGH
+    source:
+      type: jira
+      reference: GURUJA-8968
+  - statement: As preferências salvam sozinhas a cada troca (PUT por campo) e persistem após recarregar
+    kind: behavior
+    status: OBSERVED
+    confidence: HIGH
+    source:
+      type: run
+      reference: GURUJA-8968-20261026T160952
+  - statement: Consentimento de Plataformas integradas grava autoApplyDiscountsUpdatedAt/receivePerformanceDataUpdatedAt só na API (não na tela), sem fuso horário e apenas a última alteração (sem histórico)
+    kind: risk
+    status: OBSERVED
+    confidence: HIGH
+    source:
+      type: run
+      reference: GURUJA-8968-20261026T160952
+  - statement: Alterar e-mail é um link mailto para o suporte (sem formulário); senha atual errada (400 "Senha atual incorreta.") abre diálogo de erro em vez de erro no campo
+    kind: behavior
+    status: OBSERVED
+    confidence: HIGH
+    source:
+      type: run
+      reference: GURUJA-8968-20261026T160952
+  - statement: Assinatura > Alterar abre direto o modal de forma de pagamento (GET /api/v1/users/me/payment-methods); o fluxo antigo com PaymentToken não é mais chamado
+    kind: behavior
+    status: OBSERVED
+    confidence: MEDIUM
+    source:
+      type: run
+      reference: GURUJA-8968-20261026T160952
+  - statement: "Download de comprovante de termos inexistente: GET /v2/File/{id}/Content devolve 500 com stack trace (deveria ser 404 sem detalhes internos)"
+    kind: regression
+    status: SUSPECTED
+    confidence: HIGH
+    source:
+      type: run
+      reference: GURUJA-8968-20261026T160952
+  - statement: /arena-api/study responde 401 token_invalid com sessão válida (Fixação Ativa mostra "Sua sessão expirou") enquanto /arena-api/srs e a API .NET respondem 200
+    kind: regression
+    status: SUSPECTED
+    confidence: HIGH
+    source:
+      type: run
+      reference: GURUJA-8968-20261026T160952
+  - statement: Acesso direto a /configuracoes pode dar 404 de forma intermitente no host dev (build antigo sem a rota); chegar pelo menu ou repetir
+    kind: risk
+    status: OBSERVED
+    confidence: HIGH
+    source:
+      type: run
+      reference: GURUJA-8968-20261026T160952

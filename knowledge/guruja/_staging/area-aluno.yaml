@@ -1,0 +1,52 @@
+module: area-aluno
+reviewed: false
+proposals:
+  - statement: Preferências de exibição do professor (showEmailChannel, showWhatsappChannel, showTelegramChannel) controlam quais botões de contato aparecem no modal
+    kind: business_rule
+    status: DOCUMENTED
+    confidence: HIGH
+    source:
+      type: jira
+      reference: GURUJA-9002
+  - statement: Cargo/órgão, e-mail e WhatsApp são obrigatórios no cadastro do professor
+    kind: business_rule
+    status: DOCUMENTED
+    confidence: MEDIUM
+    source:
+      type: jira
+      reference: GURUJA-9002
+  - statement: Dados do modal do professor vêm de GET /v3/User/Mentor chamado no carregamento da área do aluno; abrir o modal não faz nova request. A API autentica por header Authorization (não cookie)
+    kind: behavior
+    status: OBSERVED
+    confidence: HIGH
+    source:
+      type: run
+      reference: GURUJA-9002-20261026T143144
+  - statement: "Guruja aceita uma sessão ativa por usuário: novo login derruba a anterior (APIs passam a responder 401). Logins paralelos do mesmo usuário de teste quebram a execução"
+    kind: behavior
+    status: OBSERVED
+    confidence: HIGH
+    source:
+      type: run
+      reference: GURUJA-9002-20261026T143144
+  - statement: "O host dev (portal-guruja-dev) serviu de forma intermitente dois builds: o antigo (Pages Router, /v1/User/Mentor) e o facelift (App Router, ?_rsc=, /v3/User/Mentor). Antes de classificar falha de layout, confirmar qual build respondeu"
+    kind: risk
+    status: OBSERVED
+    confidence: HIGH
+    source:
+      type: run
+      reference: GURUJA-9002-20261026T143144
+  - statement: Sessão derrubada por novo login fica no shell com nome/e-mail do aluno e "Ops! Algo deu errado" em vez de redirecionar ao login
+    kind: regression
+    status: SUSPECTED
+    confidence: MEDIUM
+    source:
+      type: run
+      reference: GURUJA-9002-20261026T143144
+  - statement: Radar do perfil de trabalho desenha 6 eixos a partir de 3 notas da API (posture, communication, structure); a regra de mapeamento não está documentada
+    kind: risk
+    status: OBSERVED
+    confidence: HIGH
+    source:
+      type: run
+      reference: GURUJA-9002-20261026T143144

@@ -1,0 +1,11 @@
+# Projetos atendidos. Um projeto agrupa knowledge/<id>/ e automation/<id>/.
+# Projetos reais são adicionados quando o primeiro card deles for testado.
+projects:
+  guruja:
+    name: Guruja
+    jiraKeys: [GURUJA]
+    language: pt
+  fixture:
+    name: App fixture local (usado para testar as próprias ferramentas)
+    jiraKeys: []
+    language: pt
