@@ -213,6 +213,15 @@ describe('fluxo /qa ponta a ponta (fixture, ferramentas reais)', () => {
     expect(html).toMatch(/<img loading="lazy" src="\.\.\/\.\.\/runs\/FIX-50\//);
     expect(html).not.toContain(PASSWORD);
 
+    // Explicação em linguagem simples: salva no run e mantida ao regerar sem ela.
+    await h.ok('report_build', {
+      runId,
+      explanations: [{ code: 'CT-002', title: 'Salvar com erro não avisa', howToSee: 'Cadastre um aluno com nome "erro"', happens: 'Nada aparece', expected: 'Mensagem de erro' }],
+    });
+    const again = await h.ok('report_build', { runId });
+    expect(readFileSync(join(h.root, again.report), 'utf8')).toMatch(/## Bugs explicados[\s\S]*### 1\. Salvar com erro não avisa \(CT-002\)/);
+    expect(readFileSync(join(h.root, again.html), 'utf8')).toContain('<dt>O que acontece</dt><dd>Nada aparece</dd>');
+
     // Próximo card do módulo já recebe o execution knowledge no briefing
     const next = (await h.ok('run_start', { issueKey: 'FIX-51', env: 'fixture-local', mode: 'manual' })).runId;
     await h.ok('plan_save', { runId: next, modules: ['alunos'], scenarios: [sc('CT-001', 'LOW')] });

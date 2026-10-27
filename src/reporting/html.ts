@@ -14,6 +14,7 @@ export interface HtmlScenario {
 export interface HtmlVideo { path: string; chapters: { code: string; atSec: number }[] }
 export interface HtmlModel {
   issueKey: string; title: string; runId: string; env: string; mode: string; recommendation: string | null; conclusion: string | null;
+  explanations: { code: string; title: string; howToSee: string; happens: string; expected: string; note?: string }[];
   counts: { planned: number; executed: number; passed: number; failed: number; blocked: number; review: number; notExecuted: number; exploratory: number; bugs: number };
   retest?: { parent: string; fixed: number; stillFailing: number; regressed: number; rows: { code: string; was: string; now: string }[] };
   scenarios: HtmlScenario[];
@@ -51,7 +52,7 @@ export function renderHtml(m: HtmlModel): string {
     const other = s.evidence.filter((e) => e.kind !== 'screenshot' && e.kind !== 'video');
     const open = s.status === 'FAILED' || s.status === 'NEEDS_REVIEW' ? ' open' : '';
     return `
-<details class="scenario"${open}>
+<details class="scenario" id="${esc(s.code)}"${open}>
   <summary>
     ${badge(s.status)} <b>${esc(s.code)}</b> ${esc(s.title)}
     <span class="meta">${esc(s.priority)} · risco ${esc(s.risk)}${s.confidence ? ` · confiança ${esc(s.confidence)}` : ''}${s.classification ? ` · ${esc(s.classification)}` : ''}${s.parent ? ` · de ${esc(s.parent)}` : ''}</span>
@@ -97,6 +98,10 @@ h1 { font-size:22px; margin:0 0 4px; } h2 { font-size:17px; margin:28px 0 10px; 
 .card .n { font-size:24px; font-weight:700; } .card .l { color:var(--muted); font-size:12px; }
 .card.ok .n{color:var(--ok)} .card.bad .n{color:var(--bad)} .card.warn .n{color:var(--warn)}
 .conclusion { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--info); border-radius:8px; padding:12px 14px; }
+.explain { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--bad); border-radius:8px; padding:4px 14px 10px; margin:8px 0; }
+.explain h3 { font-size:15px; margin:10px 0 6px; } .explain h3 a { font-weight:400; margin-left:6px; }
+.explain dl { display:grid; grid-template-columns:150px 1fr; gap:4px 12px; margin:0; } .explain dt { color:var(--muted); font-size:13px; } .explain dd { margin:0; }
+@media (max-width:600px) { .explain dl { grid-template-columns:1fr; } .explain dd { margin-bottom:6px; } }
 .scenario { background:var(--card); border:1px solid var(--line); border-radius:10px; margin:8px 0; }
 .scenario summary { cursor:pointer; padding:10px 12px; list-style:none; display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
 .scenario summary::-webkit-details-marker { display:none; }
@@ -129,6 +134,17 @@ ${card('Bloqueados', c.blocked, c.blocked ? 'warn' : '')}${card('Em revisão', c
 </div>
 
 ${m.conclusion ? `<h2>Conclusão</h2><div class="conclusion">${esc(m.conclusion)}</div>` : ''}
+
+${m.explanations.length ? `<h2>Bugs explicados</h2>${m.explanations.map((e, i) => `
+<div class="explain">
+  <h3>${i + 1}. ${esc(e.title)} <a class="muted" href="#${esc(e.code)}">${esc(e.code)}</a></h3>
+  <dl>
+    <dt>Como ver</dt><dd>${esc(e.howToSee)}</dd>
+    <dt>O que acontece</dt><dd>${esc(e.happens)}</dd>
+    <dt>O que o card pede</dt><dd>${esc(e.expected)}</dd>
+    ${e.note ? `<dt>Observação</dt><dd>${esc(e.note)}</dd>` : ''}
+  </dl>
+</div>`).join('')}` : ''}
 
 ${m.retest ? `<h2>Reteste de ${esc(m.retest.parent)}</h2><p>Corrigidos ${m.retest.fixed} · ainda falham ${m.retest.stillFailing} · regressões ${m.retest.regressed}</p>
 <table class="cmp"><tr><th>Cenário</th><th>Antes</th><th>Agora</th></tr>${m.retest.rows.map((r) => `<tr><td>${esc(r.code)}</td><td>${badge(r.was)}</td><td>${badge(r.now)}</td></tr>`).join('')}</table>` : ''}

@@ -1,0 +1,1114 @@
+[
+  {
+    "route": "/",
+    "action": "fill",
+    "target": {
+      "role": "textbox",
+      "name": "nickName"
+    },
+    "playwright": "await page.getByRole('textbox', { name: 'nickName' }).fill(<username>);",
+    "valueType": "username",
+    "scenario": "CT-001",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/",
+    "action": "fill",
+    "target": {
+      "role": "textbox",
+      "name": "password"
+    },
+    "playwright": "await page.getByRole('textbox', { name: 'password' }).fill(<password>);",
+    "valueType": "password",
+    "scenario": "CT-001",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Entrar"
+    },
+    "playwright": "await page.getByRole('button', { name: 'Entrar' }).click();",
+    "scenario": "CT-001",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/visao-geral",
+    "action": "click",
+    "target": {
+      "role": "link",
+      "name": "Favoritas"
+    },
+    "playwright": "await page.getByRole('link', { name: 'Favoritas' }).click();",
+    "scenario": "CT-001",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Sobre o saldo"
+    },
+    "playwright": "await page.getByRole('button', { name: 'Sobre o saldo' }).click();",
+    "scenario": "CT-001",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Fechar",
+      "within": {
+        "role": "dialog",
+        "name": "Saldo restante"
+      }
+    },
+    "playwright": "await page.getByRole('dialog', { name: 'Saldo restante' }).getByRole('button', { name: 'Fechar' }).click();",
+    "scenario": "CT-001",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Ações",
+      "within": {
+        "role": "row",
+        "name": "Revisão Parcial - Aula 19"
+      }
+    },
+    "playwright": "await page.getByRole('row', { name: 'Revisão Parcial - Aula 19' }).getByRole('button', { name: 'Ações' }).click();",
+    "scenario": "CT-002",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "press",
+    "target": {
+      "role": "menu",
+      "name": "Ações"
+    },
+    "playwright": "await page.getByRole('menu', { name: 'Ações' }).press('Escape');",
+    "scenario": "CT-002",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "cell",
+      "name": "Revisão Parcial - Aula 19"
+    },
+    "playwright": "await page.getByRole('cell', { name: 'Revisão Parcial - Aula 19' }).click();",
+    "scenario": "CT-002",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Fechar",
+      "within": {
+        "role": "dialog",
+        "name": "Atividade"
+      }
+    },
+    "playwright": "await page.getByRole('dialog', { name: 'Atividade' }).getByRole('button', { name: 'Fechar' }).click();",
+    "scenario": "CT-002",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Disciplinas"
+    },
+    "playwright": "await page.getByRole('button', { name: 'Disciplinas' }).click();",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Matemática",
+      "within": {
+        "role": "dialog"
+      }
+    },
+    "playwright": "await page.getByRole('dialog').getByRole('button', { name: 'Matemática' }).click();",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Limpar filtro Disciplinas",
+      "exact": true
+    },
+    "playwright": "await page.getByRole('button', { name: 'Limpar filtro Disciplinas', exact: true }).click();",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Tipo",
+      "exact": true
+    },
+    "playwright": "await page.getByRole('button', { name: 'Tipo', exact: true }).click();",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Revisão",
+      "within": {
+        "role": "dialog"
+      }
+    },
+    "playwright": "await page.getByRole('dialog').getByRole('button', { name: 'Revisão' }).click();",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Relevância",
+      "exact": true
+    },
+    "playwright": "await page.getByRole('button', { name: 'Relevância', exact: true }).click();",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "css": "label, li, [role=option], div[class*=item] >> nth=3",
+      "within": {
+        "role": "dialog"
+      }
+    },
+    "playwright": "await page.getByRole('dialog').locator('label, li, [role=option], div[class*=item] >> nth=3').click();",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "navigate",
+    "target": {
+      "url": "/aluno/atividades-favoritas"
+    },
+    "playwright": "await page.goto('/aluno/atividades-favoritas');",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Limpar filtro Relevância",
+      "exact": true
+    },
+    "playwright": "await page.getByRole('button', { name: 'Limpar filtro Relevância', exact: true }).click();",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Limpar filtro Tipo",
+      "exact": true
+    },
+    "playwright": "await page.getByRole('button', { name: 'Limpar filtro Tipo', exact: true }).click();",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Etiqueta",
+      "exact": true
+    },
+    "playwright": "await page.getByRole('button', { name: 'Etiqueta', exact: true }).click();",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Bizu espetacular",
+      "within": {
+        "role": "dialog"
+      }
+    },
+    "playwright": "await page.getByRole('dialog').getByRole('button', { name: 'Bizu espetacular' }).click();",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Limpar filtro Etiqueta",
+      "exact": true
+    },
+    "playwright": "await page.getByRole('button', { name: 'Limpar filtro Etiqueta', exact: true }).click();",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Planejamentos",
+      "exact": true
+    },
+    "playwright": "await page.getByRole('button', { name: 'Planejamentos', exact: true }).click();",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Projeto PAPA FOX - Pós_Edital",
+      "within": {
+        "role": "dialog"
+      }
+    },
+    "playwright": "await page.getByRole('dialog').getByRole('button', { name: 'Projeto PAPA FOX - Pós_Edital' }).click();",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Limpar filtro Planejamentos",
+      "exact": true
+    },
+    "playwright": "await page.getByRole('button', { name: 'Limpar filtro Planejamentos', exact: true }).click();",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Títulos",
+      "exact": true
+    },
+    "playwright": "await page.getByRole('button', { name: 'Títulos', exact: true }).click();",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Modelagem Conceitual",
+      "within": {
+        "role": "dialog"
+      }
+    },
+    "playwright": "await page.getByRole('dialog').getByRole('button', { name: 'Modelagem Conceitual' }).click();",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Limpar filtro Títulos",
+      "exact": true
+    },
+    "playwright": "await page.getByRole('button', { name: 'Limpar filtro Títulos', exact: true }).click();",
+    "scenario": "CT-003",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "cell",
+      "name": "Revisão - Aula 03 (Remédios Constitucionais)"
+    },
+    "playwright": "await page.getByRole('cell', { name: 'Revisão - Aula 03 (Remédios Constitucionais)' }).click();",
+    "scenario": "CT-004",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Avançar",
+      "within": {
+        "role": "dialog",
+        "name": "Atividade"
+      }
+    },
+    "playwright": "await page.getByRole('dialog', { name: 'Atividade' }).getByRole('button', { name: 'Avançar' }).click();",
+    "scenario": "CT-004",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Voltar",
+      "within": {
+        "role": "dialog",
+        "name": "Atividade"
+      }
+    },
+    "playwright": "await page.getByRole('dialog', { name: 'Atividade' }).getByRole('button', { name: 'Voltar' }).click();",
+    "scenario": "CT-004",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Editar",
+      "within": {
+        "role": "dialog",
+        "name": "Atividade"
+      }
+    },
+    "playwright": "await page.getByRole('dialog', { name: 'Atividade' }).getByRole('button', { name: 'Editar' }).click();",
+    "scenario": "CT-004",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Cancelar",
+      "within": {
+        "role": "dialog",
+        "name": "Editar Desempenho"
+      }
+    },
+    "playwright": "await page.getByRole('dialog', { name: 'Editar Desempenho' }).getByRole('button', { name: 'Cancelar' }).click();",
+    "scenario": "CT-004",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Criar etiqueta"
+    },
+    "playwright": "await page.getByRole('button', { name: 'Criar etiqueta' }).click();",
+    "scenario": "CT-005",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "fill",
+    "target": {
+      "role": "textbox",
+      "name": "Nome da etiqueta"
+    },
+    "playwright": "await page.getByRole('textbox', { name: 'Nome da etiqueta' }).fill(<literal>);",
+    "valueType": "literal",
+    "scenario": "CT-005",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "radio",
+      "name": "Cor Azul"
+    },
+    "playwright": "await page.getByRole('radio', { name: 'Cor Azul' }).click();",
+    "scenario": "CT-005",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Criar etiqueta",
+      "within": {
+        "role": "dialog",
+        "name": "Criar etiqueta"
+      }
+    },
+    "playwright": "await page.getByRole('dialog', { name: 'Criar etiqueta' }).getByRole('button', { name: 'Criar etiqueta' }).click();",
+    "scenario": "CT-005",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Ações",
+      "within": {
+        "role": "row",
+        "name": "DCON.1493.44300"
+      }
+    },
+    "playwright": "await page.getByRole('row', { name: 'DCON.1493.44300' }).getByRole('button', { name: 'Ações' }).click();",
+    "scenario": "CT-005",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "menuitem",
+      "name": "Trocar etiqueta"
+    },
+    "playwright": "await page.getByRole('menuitem', { name: 'Trocar etiqueta' }).click();",
+    "scenario": "CT-005",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "QA NOVO",
+      "within": {
+        "role": "dialog",
+        "name": "Trocar etiqueta"
+      }
+    },
+    "playwright": "await page.getByRole('dialog', { name: 'Trocar etiqueta' }).getByRole('button', { name: 'QA NOVO' }).click();",
+    "scenario": "CT-005",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Favoritar",
+      "within": {
+        "role": "dialog",
+        "name": "Trocar etiqueta"
+      }
+    },
+    "playwright": "await page.getByRole('dialog', { name: 'Trocar etiqueta' }).getByRole('button', { name: 'Favoritar' }).click();",
+    "scenario": "CT-005",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "tab",
+      "name": "Etiquetas"
+    },
+    "playwright": "await page.getByRole('tab', { name: 'Etiquetas' }).click();",
+    "scenario": "CT-005",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Ações da etiqueta QA NOVO"
+    },
+    "playwright": "await page.getByRole('button', { name: 'Ações da etiqueta QA NOVO' }).click();",
+    "scenario": "CT-005",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "menuitem",
+      "name": "Editar etiqueta QA NOVO"
+    },
+    "playwright": "await page.getByRole('menuitem', { name: 'Editar etiqueta QA NOVO' }).click();",
+    "scenario": "CT-005",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Salvar alterações"
+    },
+    "playwright": "await page.getByRole('button', { name: 'Salvar alterações' }).click();",
+    "scenario": "CT-005",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "tab",
+      "name": "Meus favoritos"
+    },
+    "playwright": "await page.getByRole('tab', { name: 'Meus favoritos' }).click();",
+    "scenario": "CT-005",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Ações da etiqueta QA NOVO 2"
+    },
+    "playwright": "await page.getByRole('button', { name: 'Ações da etiqueta QA NOVO 2' }).click();",
+    "scenario": "CT-005",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "menuitem",
+      "name": "Excluir etiqueta QA NOVO 2"
+    },
+    "playwright": "await page.getByRole('menuitem', { name: 'Excluir etiqueta QA NOVO 2' }).click();",
+    "scenario": "CT-005",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Excluir",
+      "exact": true,
+      "within": {
+        "role": "dialog",
+        "name": "Você está excluindo uma etiqueta"
+      }
+    },
+    "playwright": "await page.getByRole('dialog', { name: 'Você está excluindo uma etiqueta' }).getByRole('button', { name: 'Excluir', exact: true }).click();",
+    "scenario": "CT-005",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "tab",
+      "name": "Histórico"
+    },
+    "playwright": "await page.getByRole('tab', { name: 'Histórico' }).click();",
+    "scenario": "CT-006",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Período"
+    },
+    "playwright": "await page.getByRole('button', { name: 'Período' }).click();",
+    "scenario": "CT-006",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Outubro de 2026",
+      "exact": true
+    },
+    "playwright": "await page.getByRole('button', { name: 'Outubro de 2026', exact: true }).click();",
+    "scenario": "CT-006",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "quinta-feira, 1 de outubro de 2026"
+    },
+    "playwright": "await page.getByRole('button', { name: 'quinta-feira, 1 de outubro de 2026' }).click();",
+    "scenario": "CT-006",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "segunda-feira, 26 de outubro de 2026"
+    },
+    "playwright": "await page.getByRole('button', { name: 'segunda-feira, 26 de outubro de 2026' }).click();",
+    "scenario": "CT-006",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "row",
+      "name": "Atividades removidas das favoritas"
+    },
+    "playwright": "await page.getByRole('row', { name: 'Atividades removidas das favoritas' }).click();",
+    "scenario": "CT-006",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "viewport",
+    "target": {
+      "viewport": "390x844"
+    },
+    "playwright": "await page.setViewportSize({ width: 390, height: 844 });",
+    "scenario": "CT-008",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Filtrar"
+    },
+    "playwright": "await page.getByRole('button', { name: 'Filtrar' }).click();",
+    "scenario": "CT-008",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Fechar filtros"
+    },
+    "playwright": "await page.getByRole('button', { name: 'Fechar filtros' }).click();",
+    "scenario": "CT-008",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Remover dos favoritos",
+      "within": {
+        "role": "row",
+        "name": "Revisão Parcial - Aula 19"
+      }
+    },
+    "playwright": "await page.getByRole('row', { name: 'Revisão Parcial - Aula 19' }).getByRole('button', { name: 'Remover dos favoritos' }).click();",
+    "scenario": "CT-002",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/arquivo",
+    "action": "navigate",
+    "target": {
+      "url": "/aluno/arquivo"
+    },
+    "playwright": "await page.goto('/aluno/arquivo');",
+    "scenario": "CT-002",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/arquivo",
+    "action": "fill",
+    "target": {
+      "role": "textbox",
+      "name": "Procurar pelo código da atividade"
+    },
+    "playwright": "await page.getByRole('textbox', { name: 'Procurar pelo código da atividade' }).fill(<literal>);",
+    "valueType": "literal",
+    "scenario": "CT-002",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/arquivo",
+    "action": "press",
+    "target": {
+      "role": "textbox",
+      "name": "Procurar pelo código da atividade"
+    },
+    "playwright": "await page.getByRole('textbox', { name: 'Procurar pelo código da atividade' }).press('Enter');",
+    "scenario": "CT-002",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/arquivo",
+    "action": "click",
+    "target": {
+      "text": "Revisão Parcial - Aula 19"
+    },
+    "playwright": "await page.getByText('Revisão Parcial - Aula 19').click();",
+    "scenario": "CT-002",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/arquivo",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Adicionar aos favoritos"
+    },
+    "playwright": "await page.getByRole('button', { name: 'Adicionar aos favoritos' }).click();",
+    "scenario": "CT-002",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/arquivo",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Favoritar atividade",
+      "within": {
+        "css": "form >> nth=1"
+      }
+    },
+    "playwright": "await page.locator('form >> nth=1').getByRole('button', { name: 'Favoritar atividade' }).click();",
+    "scenario": "CT-002",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/arquivo",
+    "action": "click",
+    "target": {
+      "role": "cell",
+      "name": "Mapeamento aula 00",
+      "exact": true
+    },
+    "playwright": "await page.getByRole('cell', { name: 'Mapeamento aula 00', exact: true }).click();",
+    "scenario": "CT-009",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/arquivo",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Ok, obrigado.",
+      "within": {
+        "css": "[role=dialog] >> nth=-1"
+      }
+    },
+    "playwright": "await page.locator('[role=dialog] >> nth=-1').getByRole('button', { name: 'Ok, obrigado.' }).click();",
+    "scenario": "CT-009",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/entrar",
+    "action": "navigate",
+    "target": {
+      "url": "/entrar"
+    },
+    "playwright": "await page.goto('/entrar');",
+    "scenario": "(setup)",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/entrar",
+    "action": "fill",
+    "target": {
+      "role": "textbox",
+      "name": "nickName"
+    },
+    "playwright": "await page.getByRole('textbox', { name: 'nickName' }).fill(<username>);",
+    "valueType": "username",
+    "scenario": "(setup)",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/entrar",
+    "action": "fill",
+    "target": {
+      "role": "textbox",
+      "name": "password"
+    },
+    "playwright": "await page.getByRole('textbox', { name: 'password' }).fill(<password>);",
+    "valueType": "password",
+    "scenario": "(setup)",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/entrar",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Entrar"
+    },
+    "playwright": "await page.getByRole('button', { name: 'Entrar' }).click();",
+    "scenario": "(setup)",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  },
+  {
+    "route": "/aluno/atividades-favoritas",
+    "action": "click",
+    "target": {
+      "role": "button",
+      "name": "Fechar"
+    },
+    "playwright": "await page.getByRole('button', { name: 'Fechar' }).click();",
+    "scenario": "CT-009",
+    "validatedIn": [
+      "GURUJA-9014-20261026T191907"
+    ],
+    "lastSeen": "2026-10-26"
+  }
+]

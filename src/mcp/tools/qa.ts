@@ -117,9 +117,26 @@ export function registerQaTools(tool: RegisterTool, deps: QaDeps): void {
 
   tool(
     'report_build',
-    'Gera reports/<card>/<runId>.md (cenários, falhas com evidências, guard, limpeza, métricas, rascunho de comentário Jira) e devolve o resumo para o terminal.',
-    { runId: z.string() },
+    'Gera reports/<card>/<runId>.md (cenários, falhas com evidências, guard, limpeza, métricas, rascunho de comentário Jira) e devolve o resumo para o terminal. ' +
+      'explanations: um item por problema, em linguagem simples para quem não acompanhou o teste (onde/como ver, o que acontece, o que o card pede, ressalva); ' +
+      'fica salvo no run e reaparece nas próximas gerações.',
+    {
+      runId: z.string(),
+      // Aceita JSON em texto: cliente com schema em cache (antes do recarregamento do servidor) envia assim.
+      explanations: z.preprocess((v) => (typeof v === 'string' ? JSON.parse(v) : v), z.array(z.object({
+        code: z.string().describe('cenário de origem, ex.: CT-003'),
+        title: z.string().min(3),
+        howToSee: z.string().min(3),
+        happens: z.string().min(3),
+        expected: z.string().min(3),
+        note: z.string().optional(),
+      })).optional()),
+    },
     (a) => {
+      if (a.explanations) {
+        for (const e of a.explanations) store.getScenario(a.runId, e.code);
+        store.logEvent(a.runId, null, 'report.explain', a.explanations);
+      }
       // Uso de modelo vem dos transcripts do Claude Code; a chamada em curso pode ainda não estar gravada.
       ingestTranscripts(deps.db, deps.transcriptDirs ?? []);
       const metrics = computeRunMetrics(deps.db, store, a.runId);

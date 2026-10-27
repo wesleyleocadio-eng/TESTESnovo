@@ -1,0 +1,45 @@
+module: favoritos
+reviewed: false
+proposals:
+  - statement: Desfavoritar devolve 1 ponto ao saldo e favoritar consome 1 (14 favoritas/176 restantes ↔ 13/177); DELETE /v2/FavoriteActivity/{id} e POST criam id novo a cada favoritar.
+    kind: behavior
+    status: OBSERVED
+    confidence: HIGH
+    source:
+      type: run
+      reference: GURUJA-9014-20261026T191907
+  - statement: Com saldo 0 (GET /v2/User/{id}/Loyalty), o front bloqueia o favoritar antes da API, com o diálogo 'Você não possui saldo para favoritar atividades'.
+    kind: behavior
+    status: OBSERVED
+    confidence: MEDIUM
+    source:
+      type: run
+      reference: GURUJA-9014-20261026T191907
+  - statement: A Feature Flag do facelift é decidida no servidor (página já vem com data-theme="facelift"); não há request de flag no front para simular — CT de flag desligada exige aluno com a flag desligada no DEV.
+    kind: risk
+    status: OBSERVED
+    confidence: HIGH
+    source:
+      type: run
+      reference: GURUJA-9014-20261026T191907
+  - statement: Histórico exibe transação FavoriteActivityRemoved com a descrição 'Atividade adicionada às favoritas' (API devolve o tipo correto).
+    kind: regression
+    status: OBSERVED
+    confidence: HIGH
+    source:
+      type: run
+      reference: GURUJA-9014-20261026T191907
+  - statement: "Erro 500 na lista /v2/student/{id}/FavoriteActivity: 4 tentativas e depois estado vazio 'Nenhum registro encontrado', sem mensagem de erro."
+    kind: regression
+    status: OBSERVED
+    confidence: HIGH
+    source:
+      type: run
+      reference: GURUJA-9014-20261026T191907
+  - statement: "Massa DEV: Belmiro (id 2536) saldo 250 e 0 favoritas; Celular (id 19662) saldo 64 e 11 favoritas; ambos com facelift ligado. AbnerNasser (id 13174) 14 favoritas/176."
+    kind: behavior
+    status: OBSERVED
+    confidence: MEDIUM
+    source:
+      type: run
+      reference: GURUJA-9014-20261026T191907

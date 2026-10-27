@@ -8,7 +8,7 @@ import type { RunRow, StateStore } from '../state/store.ts';
 export interface ExecutionEntry {
   route: string;
   action: string;
-  target: Target | { url: string };
+  target: Target | { url: string } | { viewport: string };
   /** Linha Playwright equivalente — reaproveitada na geração da automação. */
   playwright: string;
   valueType?: string;
@@ -26,8 +26,12 @@ function valueTypeOf(ref: string | null): string | undefined {
   return role ? role[1] : undefined;
 }
 
-export function playwrightLine(action: string, target: Target | { url: string }, ref: string | null): string {
+export function playwrightLine(action: string, target: Target | { url: string } | { viewport: string }, ref: string | null): string {
   if (action === 'navigate') return `await page.goto('${(target as { url: string }).url}');`;
+  if (action === 'viewport') {
+    const [width, height] = (target as { viewport: string }).viewport.split('x');
+    return `await page.setViewportSize({ width: ${width}, height: ${height} });`;
+  }
   const loc = toPlaywrightCode(target as Target);
   const valueType = valueTypeOf(ref);
   const arg = valueType ? `<${valueType}>` : '<valor>';
@@ -43,7 +47,7 @@ export function playwrightLine(action: string, target: Target | { url: string },
 export function buildExecutionKnowledge(store: StateStore, run: RunRow): ExecutionEntry[] {
   const seen = new Map<string, ExecutionEntry>();
   for (const row of store.validatedActions(run.id)) {
-    const target = JSON.parse(row.target_json ?? '{}') as Target | { url: string };
+    const target = JSON.parse(row.target_json ?? '{}') as ExecutionEntry['target'];
     const route = row.url ? new URL(row.url).pathname : '';
     const key = `${route}|${row.action}|${row.target_json}`;
     if (seen.has(key)) continue;

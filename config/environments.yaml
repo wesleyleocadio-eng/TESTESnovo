@@ -1,4 +1,4 @@
-# Ambientes onde o NOVO QA pode operar o navegador.
+﻿# Ambientes onde o NOVO QA pode operar o navegador.
 #
 # type: local | dev | staging | prod   (prod = somente ações GREEN)
 # Valores podem ser literais ou { env: NOME_DA_VARIAVEL } (lido do .env).
@@ -21,6 +21,13 @@ environments:
         password: { env: GURUJA_DEV_ADMIN_PASSWORD }
       aluno:
         username: AbnerNasser
+        password: { env: GURUJA_DEV_ALUNO_PASSWORD }
+      # Alunos extras informados pelo usuário em 26/10 (massa alternativa, ex.: saldo/flag diferentes); mesma senha do aluno.
+      aluno-belmiro:
+        username: Belmiro
+        password: { env: GURUJA_DEV_ALUNO_PASSWORD }
+      aluno-celular:
+        username: Celular
         password: { env: GURUJA_DEV_ALUNO_PASSWORD }
   fixture-local:
     project: fixture

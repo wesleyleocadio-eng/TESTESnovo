@@ -18,6 +18,8 @@ const STATUS_ICON: Record<string, string> = {
 
 interface Row { [k: string]: unknown }
 
+export interface Explanation { code: string; title: string; howToSee: string; happens: string; expected: string; note?: string }
+
 const clock = (sec: number) => `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, '0')}`;
 
 export function buildReport(
@@ -73,10 +75,22 @@ export function buildReport(
   const verificationsOf = (s: ScenarioDetails, passed: 0 | 1) =>
     all(`SELECT id, kind, description, expected, actual, passed FROM verifications WHERE scenario_id = ? AND passed = ? AND ts >= COALESCE((SELECT started_at FROM scenarios WHERE id = scenario_id), '') ORDER BY id`, s.id, passed);
 
+  // Explicação em linguagem simples (a mais recente gravada via report_build).
+  const explainRow = all(`SELECT payload FROM events WHERE run_id = ? AND type = 'report.explain' ORDER BY id DESC LIMIT 1`, runId)[0];
+  const explanations = explainRow ? (JSON.parse(String(explainRow.payload)) as Explanation[]) : [];
+
   const md: string[] = [];
   md.push(`# ${run.issue_key} — ${issue?.title ?? 'relatório de QA'}`, '');
   md.push('```text', summary, '```', '');
   if (run.summary) md.push('## Conclusão', '', run.summary, '');
+  if (explanations.length) {
+    md.push('## Bugs explicados', '');
+    explanations.forEach((e, i) => {
+      md.push(`### ${i + 1}. ${e.title} (${e.code})`, '', `- Como ver: ${e.howToSee}`, `- O que acontece: ${e.happens}`, `- O que o card pede: ${e.expected}`);
+      if (e.note) md.push(`- Observação: ${e.note}`);
+      md.push('');
+    });
+  }
 
   md.push('## Cenários', '', '| Cenário | Título | Prioridade | Resultado | Confiança | Classificação |', '| --- | --- | --- | --- | --- | --- |');
   for (const s of scenarios) {
@@ -191,6 +205,7 @@ export function buildReport(
     mode: run.mode,
     recommendation: run.recommendation,
     conclusion: run.summary,
+    explanations,
     counts: {
       planned, executed, passed: by('PASSED'), failed: by('FAILED'), blocked: by('BLOCKED'), review: by('NEEDS_REVIEW'),
       notExecuted: by('NOT_EXECUTED'), exploratory: exploratory.length, bugs: bugs.length,
